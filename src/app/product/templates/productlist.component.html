@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="container">
+    <!-- <button (click)="check()" >click</button> -->
+    <div class="container" *ngIf="products">
+      <h3>Danh sách Tour</h3>
+      <a [routerLink]="['add']" routerLinkActive="router-link-active" class="btn btn-primary"
+        >Thêm Tour</a><br><br>
+      <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+              <td style="width: 5%">#</td>
+              <td style="width: 30%">Tên</td>
+              <td style="width: 30%">Giá (đồng)</td>
+              <td style="width: 30%">Thao Tác</td>
+            </tr>
+        </thead>
+        <tbody  *ngIf="products">
+          <tr *ngFor="let product of products; let id = index">
+            <td>{{ id + 1 }}</td>
+            <td><a [routerLink]="['/product', product.id]">{{ product.name }}</a></td>
+            <td>{{ product.price|number }}</td>
+            <td>
+              <a [routerLink]="['edit', product.id]" class="btn btn-primary">Sửa</a>&nbsp;&nbsp;
+              <a [routerLink]="['delete', product.id]" class="btn btn-danger">Xóa</a>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
+  </div>
+</div>

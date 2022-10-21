@@ -1,0 +1,11 @@
+<div class="panel panel-default" style="width: 550px; margin: 0px auto;">
+  <div>
+      <h3 class="panel-title">Chi tiết tour</h3>
+  </div>
+  <div class="panel-body" *ngIf="product">Tour du lịch : {{ product.name }}</div><br>
+  <div class="panel-body" *ngIf="product">Giá: {{ product.price|number }} đồng</div><br>
+  <div class="panel-body" *ngIf="product">Mô tả: {{ product.description }}</div>
+  <br>
+  <div>
+      <a [routerLink]="['/product']" class="btn btn-primary">Danh sách</a>
+  </div>
